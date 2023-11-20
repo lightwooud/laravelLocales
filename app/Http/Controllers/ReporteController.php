@@ -10,9 +10,9 @@ class ReporteController extends Controller
     public function generarPDF()
     {
         $pdf = new TCPDF();
-        $local = local::join('subcategorias','locals.subcategoria','=','subcategorias.id')
-        ->join('categorias','subcategorias.categoria','=','categorias.id')
-        ->select('locals.*','subcategorias.name as namesubcategorias','categorias.name as namecategoria')
+        $local = local::join('subcategorias','locales_comerciales.subcategorias_id','=','subcategorias.id')
+        ->join('categorias','subcategorias.categorias_id','=','categorias.id')
+        ->select('locales_comerciales.*','subcategorias.nombre as namesubcategorias','categorias.nombre as namecategoria')
         ->get();
      
 

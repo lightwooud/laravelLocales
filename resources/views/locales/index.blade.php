@@ -9,9 +9,11 @@
                 <div class="col">
                 <h3 class="mb-0">Locales comerciales</h3>
                 </div>
-                <div class="col text-right">
-                <a href="{{url('/locales/create')}}" class="btn btn-sm btn-primary">Nuevo local</a>
-                </div>
+                @if (auth()->user()->cargo == 'ADMINISTRADOR')
+                    <div class="col text-right">
+                    <a href="{{url('/locales/create')}}" class="btn btn-sm btn-primary">Nuevo local</a>
+                    </div>
+                @endif
             </div>
             </div>
             <div class="table-responsive">
